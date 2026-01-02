@@ -1,0 +1,152 @@
+# Adaptive Workflow Orchestrator Configuration
+
+# Logging configuration
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: logs/orchestrator.log
+
+# Perception Module Configuration
+perception:
+  # Data sources
+  sources:
+    email:
+      enabled: false
+      provider: imap  # imap, gmail_api
+      host: imap.gmail.com
+      port: 993
+      username: ""
+      password: ""
+
+    calendar:
+      enabled: false
+      provider: caldav  # caldav, google_calendar
+      url: ""
+      username: ""
+      password: ""
+
+    project_management:
+      enabled: false
+      provider: jira  # jira, trello, notion
+      url: ""
+      api_key: ""
+
+    code:
+      enabled: false
+      provider: github  # github, gitlab
+      repositories: []
+      api_token: ""
+
+    filesystem:
+      enabled: false
+      watch_paths:
+        - ~/Documents
+        - ~/Downloads
+
+  # Data filters
+  filters:
+    spam_patterns:
+      - "\\bnoreply@"
+      - "unsubscribe"
+      - "newsletter"
+
+    priority_keywords:
+      - urgent
+      - critical
+      - asap
+      - deadline
+      - blocker
+      - emergency
+
+    noise_senders:
+      - notifications@
+      - noreply@
+
+# Cognitive Engine Configuration
+cognitive:
+  # Memory system
+  memory:
+    short_term_capacity: 100
+    long_term:
+      provider: local  # local, pinecone, weaviate
+      storage_path: data/vector_store
+
+  # User Manual (your preferences)
+  user_manual:
+    communication:
+      tone: professional  # professional, casual, formal
+      verbosity: balanced  # terse, balanced, detailed
+      notification_style: summary
+      preferred_channels:
+        - email
+        - slack
+
+    work:
+      timezone: UTC
+      work_hours:
+        start: "09:00"
+        end: "17:00"
+      break_times:
+        - start: "12:00"
+          end: "13:00"
+      preferred_task_duration: 30  # minutes
+
+    tasks:
+      prioritization_style: impact_first  # impact_first, deadline_first, effort_first
+      batch_similar_tasks: true
+      max_concurrent_tasks: 3
+      break_frequency: 90  # minutes
+
+    energy_patterns:
+      peak_hours: [9, 10, 11]
+      low_hours: [13, 14]
+      best_for_creative: [9, 10]
+      best_for_analytical: [10, 11, 15]
+      best_for_administrative: [14, 16]
+
+    goals:
+      short_term: []
+      long_term: []
+      key_results: []
+
+    automation:
+      autonomy_level: medium  # low, medium, high
+      require_approval_for:
+        - send_email
+        - schedule_meeting
+        - modify_code
+        - delete_files
+      auto_approve:
+        - sort_files
+        - tag_emails
+        - create_drafts
+
+  # LLM configuration
+  llm:
+    model: claude-sonnet-4
+    temperature: 0.7
+    max_tokens: 4096
+
+# Action Layer Configuration
+action:
+  executor:
+    sandbox_enabled: true
+    allowed_python_modules:
+      - json
+      - csv
+      - datetime
+      - math
+      - statistics
+
+  permissions:
+    # User can override permission tiers here
+    user_overrides: {}
+
+# Optimization Loop Configuration
+optimization:
+  pattern_recognition:
+    min_occurrences: 3
+    lookback_days: 30
+
+  proposals:
+    auto_enable: false  # If true, Tier 3 automations enable automatically
+    notification_threshold: high  # Only notify for high-value proposals
