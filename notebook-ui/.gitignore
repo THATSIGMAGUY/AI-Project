@@ -5,3 +5,8 @@ dist-ssr
 *.local
 .DS_Store
 *.log
+
+# TypeScript / Vite generated outputs
+*.tsbuildinfo
+vite.config.js
+vite.config.d.ts
