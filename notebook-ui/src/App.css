@@ -1,0 +1,86 @@
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-elev);
+}
+
+.app__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font: 600 14px/1 var(--font-sans);
+  letter-spacing: 0.02em;
+}
+
+.app__brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.app__nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.app__nav-item {
+  background: transparent;
+  border: 0;
+  color: var(--fg-muted);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font: 600 12px/1 var(--font-sans);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.app__nav-item:hover { color: var(--fg); }
+
+.app__nav-item.is-active {
+  background: var(--accent-soft);
+  color: var(--edge-label-fg);
+}
+
+.app__theme {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 3px;
+}
+
+.app__theme-btn {
+  background: transparent;
+  border: 0;
+  color: var(--fg-muted);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font: 600 10px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.app__theme-btn.is-active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.app__main {
+  position: relative;
+  overflow: hidden;
+}

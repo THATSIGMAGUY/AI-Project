@@ -1,0 +1,30 @@
+@import "./tokens.css";
+@import "@xyflow/react/dist/style.css";
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--fg);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* React Flow surface picks up our canvas color so the gradient mode shows
+   through cleanly. */
+.react-flow {
+  background: var(--bg-canvas);
+}
+
+.theme-present .react-flow {
+  background: var(--surface-grad);
+}
+
+/* Hide the default React Flow edge stroke; our PillEdge component renders
+   its own SVG path so we keep full styling control. */

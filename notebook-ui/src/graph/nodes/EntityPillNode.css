@@ -1,0 +1,34 @@
+.entity-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  border: 1px solid var(--pill-border);
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  box-shadow: var(--shadow-card);
+}
+
+.entity-pill__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--type-color, var(--accent));
+  flex: 0 0 auto;
+}
+
+.entity-pill__label {
+  text-transform: uppercase;
+}
+
+/* Hide the React Flow connection handles in this aesthetic; we only need them
+   for wiring. */
+.entity-pill .rf-handle {
+  opacity: 0;
+  width: 6px;
+  height: 6px;
+}

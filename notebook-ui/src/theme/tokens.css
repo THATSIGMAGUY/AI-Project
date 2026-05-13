@@ -1,0 +1,102 @@
+/*
+ * Design tokens.
+ *
+ * Three modes:
+ *   :root           = dark (analyst working mode)
+ *   .theme-light    = light (everyday work, lower contrast)
+ *   .theme-present  = presentation (Hume-style lavender gradient, for demos
+ *                     and screenshots)
+ *
+ * Per-entity-type colors live in --color-type-* and are referenced by the
+ * EntityPill component via inline custom property --type-color.
+ */
+
+:root {
+  /* ---- surfaces ---- */
+  --bg: #0e0f13;
+  --bg-elev: #181a20;
+  --bg-canvas: #0e0f13;
+  --surface-grad: linear-gradient(135deg, #14151b 0%, #1b1d26 100%);
+
+  --fg: #ececf1;
+  --fg-muted: #8b8f9a;
+  --border: #2a2d36;
+
+  /* ---- pill / chip ---- */
+  --pill-bg: #1a1a1a;
+  --pill-fg: #ffffff;
+  --pill-border: rgba(255, 255, 255, 0.08);
+
+  /* ---- accent ---- */
+  --accent: #b794f6;
+  --accent-soft: rgba(183, 148, 246, 0.18);
+  --accent-strong: #9f7aea;
+
+  /* ---- entity type palette ----
+   * Each maps to an EntityType from domain/types.ts.
+   * Same hue is reused on the dot inside the pill and on the edge halo.
+   */
+  --color-type-person:        #f6ad55;
+  --color-type-organization:  #4fd1c5;
+  --color-type-location:      #fc8181;
+  --color-type-event:         #b794f6;
+  --color-type-document:      #f6e05e;
+  --color-type-asset:         #63b3ed;
+  --color-type-communication: #9ae6b4;
+  --color-type-transaction:   #ed64a6;
+
+  /* ---- edges ---- */
+  --edge-color: #b794f6;
+  --edge-label-bg: rgba(183, 148, 246, 0.16);
+  --edge-label-fg: #d6bcfa;
+
+  /* ---- type & motion ---- */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-pill: 999px;
+  --radius-card: 14px;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.theme-light {
+  --bg: #f7f7fb;
+  --bg-elev: #ffffff;
+  --bg-canvas: #f7f7fb;
+  --surface-grad: linear-gradient(135deg, #ffffff 0%, #f0eef9 100%);
+
+  --fg: #1a1d25;
+  --fg-muted: #5b6070;
+  --border: #e2e3ea;
+
+  --pill-bg: #1a1a1a;
+  --pill-fg: #ffffff;
+  --pill-border: transparent;
+
+  --edge-color: #9f7aea;
+  --edge-label-bg: rgba(159, 122, 234, 0.12);
+  --edge-label-fg: #6b46c1;
+
+  --shadow-card: 0 6px 20px rgba(20, 20, 40, 0.08);
+}
+
+.theme-present {
+  /* Hume marketing aesthetic: pastel gradient canvas, dark pills, purple edges. */
+  --bg: #f3ecff;
+  --bg-elev: #ffffff;
+  --bg-canvas: transparent;
+  --surface-grad: linear-gradient(135deg, #f0e7ff 0%, #ffe7f3 100%);
+
+  --fg: #1a1d25;
+  --fg-muted: #5b6070;
+  --border: #e2dbf5;
+
+  --pill-bg: #111114;
+  --pill-fg: #ffffff;
+  --pill-border: transparent;
+
+  --edge-color: #b794f6;
+  --edge-label-bg: rgba(183, 148, 246, 0.22);
+  --edge-label-fg: #6b46c1;
+
+  --shadow-card: 0 10px 30px rgba(120, 80, 200, 0.18);
+}

@@ -1,0 +1,20 @@
+.pill-edge__label {
+  position: absolute;
+  pointer-events: all;
+  background: var(--edge-label-bg);
+  color: var(--edge-label-fg);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font: 600 9px/1 var(--font-sans);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  user-select: none;
+  backdrop-filter: blur(2px);
+}
+
+/* React Flow's default edge stroke - we override to use our purple accent. */
+.react-flow__edge-path {
+  stroke: var(--edge-color);
+  stroke-width: 1.5;
+  opacity: 0.85;
+}

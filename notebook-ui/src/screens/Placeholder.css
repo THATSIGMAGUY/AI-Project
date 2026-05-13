@@ -1,0 +1,39 @@
+.placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--bg-canvas);
+}
+
+.theme-present .placeholder {
+  background: var(--surface-grad);
+}
+
+.placeholder__inner {
+  max-width: 520px;
+  text-align: center;
+  padding: 40px;
+}
+
+.placeholder__inner h1 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+}
+
+.placeholder__inner p {
+  margin: 0 0 24px;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+
+.placeholder__chip {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-soft);
+  color: var(--edge-label-fg);
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
